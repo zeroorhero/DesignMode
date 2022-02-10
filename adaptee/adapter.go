@@ -6,6 +6,8 @@ type target interface {
 	Request() string
 }
 
+
+// 这个是现在已经写好的接口的
 type adaptee interface {
 	SpecialRequest() string
 }
@@ -18,6 +20,8 @@ func (a *adapteeImp)SpecialRequest() string{
 	return "specialrequest"
 }
 
+
+// 这个是转换器
 type adapter struct {
 	adaptee
 }

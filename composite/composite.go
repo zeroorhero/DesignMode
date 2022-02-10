@@ -11,6 +11,7 @@ type Composite interface {
 	AddChild(child Composite)
 }
 
+// 叶子节点和根节点再次进行抽象的结果
 type composite struct {
 	parent Composite
 	name string
@@ -34,6 +35,7 @@ func (c *composite)AddChild(child Composite){
 
 }
 
+// 叶子节点继承上面的抽象
 type Leaf struct {
 	composite
 }
@@ -58,6 +60,7 @@ func NewComponent() *Component{
 }
 func (c *Component)AddChild(child Composite){
 	child.SetParent(c)
+	// 切片进行添加数据
 	c.child = append(c.child, child)
 }
 func (c *Component)Print(pre string){
